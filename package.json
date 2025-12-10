@@ -20,7 +20,7 @@
   "homepage": "https://github.com/meti2626/BACKEND-NODEJS#readme",
   "dependencies": {
   
-    "lodash": "^4.17.21"
+    "lodash":"^4.17.21"
   },
   "devDependencies": {
    
