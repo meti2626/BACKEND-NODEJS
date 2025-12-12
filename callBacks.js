@@ -25,21 +25,15 @@
 // }
 
 
-
-
 sum (displaypage, 5, 10);
-
-
 
 function sum(callback ,x, y){
     let result = x + y;
     callback(result);
 }
-
 function printResult(result){
     console.log("Result: " + result);
 }
-
 function displaypage(result)
 {
     document.getElementById("myid").innerHTML = "Result: " + result;
