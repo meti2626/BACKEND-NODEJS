@@ -1,19 +1,28 @@
+ const express = require ('express');
+ const app = express();
+ const morgan = require('morgan')
+ const logger = require('./logger');
+ const authorized = require('./authorize');
 
+// req =>middleware => res
+//app.use([authorized ,logger ]);
 
-var http = require('http');
-var fs = require('fs');
-
-http
-.createServer(function (req, res) {
-  //  const text = fs.readFileSync('./content/big.txt','utf8');
-  //  res.end(text);
-  const fileStream = fs.createReadStream('./content/big.txt','utf8');
-   fileStream.on('open',()=>{
-    fileStream.pipe(res);
-   })
-   fileStream.on('error' , (err))
-   {
-    res.end(err)
-   }
+app.use(morgan('tiny'));
+app.get('/', (req, res)=>{
+  res.send('Home')
+});
+app.get('/about', (req, res)=>{
+   res.send('About')
 })
-.listen(5000)
+app.get('/api/products', (req, res)=>{
+   res.send('Products')
+})
+app.get('/api/items',(req, res)=>{
+  console.log(req.user);
+   res.send('Items')
+})
+
+app.listen(5000, ()=>{
+    console.log('server is listening on port 5000....');
+}) 
+
