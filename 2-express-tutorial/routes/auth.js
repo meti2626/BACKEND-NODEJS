@@ -1,7 +1,5 @@
-
 const express = require('express');
 const router = express.Router();
-
 
 router.post('/' , (req,res)=>
 {
@@ -11,6 +9,5 @@ router.post('/' , (req,res)=>
    }
     res.status(401).send('please Provide Credential')
 })
-
 
 module.exports = router;

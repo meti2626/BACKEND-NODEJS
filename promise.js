@@ -51,7 +51,7 @@ function takeOutTrash(){
           reject('Taking out the trash not done!')
         }, 500);
   })
-  }
+}
 
   async function doChores()
   {
@@ -65,6 +65,7 @@ function takeOutTrash(){
       console.log(takeOutTrashResult);
 
       console.log('All done!');}
+     
       catch(err){
         console.log(err);
       }
